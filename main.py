@@ -62,13 +62,26 @@ panel_botones.pack()
 
 #Lista de comidas
 Lista_comidas = ['pollo','cordero','salmon','merluza','kebab', 'pizza']
-Lista_debidas =['agua','refresco','jugo', 'cola']
+Lista_debida =['agua','refresco','jugo', 'cola']
 Lista_postres =['helado','fruta','bro','brownies','flan']
 
 contador = 0 
+variables_comida=[]
 for comida in Lista_comidas: 
+    variables_comida.append('')
+    variables_comida[contador]= IntVar()
     comida = Checkbutton(panel_comidas,text= comida.title(), font=('dosis', 19 , 'bold') , onvalue= 1 , offvalue = 0 )
     comida.grid(row=contador,column=0, sticky= W)
+    contador+=1
+
+#variables bebida
+contador = 0 
+variables_bebida=[]
+for comida in Lista_debida: 
+    variables_bebida.append('')
+    variables_bebida[contador]= IntVar()
+    bebida = Checkbutton(panel_bebidas,text= bebida.title(), font=('dosis', 19 , 'bold') , onvalue= 1 , offvalue = 0 )
+    bebida.grid(row=contador,column=0, sticky= W)
     contador+=1
 
 #evitar que la app se ceirre 
